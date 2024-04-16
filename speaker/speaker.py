@@ -4,6 +4,7 @@ import subprocess
 # MQTT Broker Info
 broker_address = "localhost"
 speak_topic = "speak"
+finish_speaking_topic = "finish_speaking"
 
 # Function to convert text to speech
 def speak(input_text):
@@ -12,6 +13,9 @@ def speak(input_text):
 
     # Execute the command
     subprocess.run(command, shell=True)
+  
+    # Publish event to finish_speaking topic
+    client.publish(finish_speaking_topic, "Speaking finished")
 
 # Callback function for MQTT message reception
 def on_message(client, userdata, message):

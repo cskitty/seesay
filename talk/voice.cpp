@@ -4,23 +4,31 @@
 // MQTT Broker Info
 const char *host = "localhost";
 const char *topic = "speak";
+const char *topic_finish_speaking = "finish_speaking";
 
 // MQTT client instance
 struct mosquitto *mosq = NULL;
 
-// MQTT callback function for when the message is published
 void on_publish(struct mosquitto *mosq, void *obj, int mid)
 {
     std::cout << "Message published to topic: " << topic << std::endl;
 }
 
-// Function to initialize Mosquitto
+bool finished_talking;
+void on_message(struct mosquitto *mosq, void *obj, const struct mosquitto_message *msg)
+{
+    printf("Message received on topic: %s\n", msg->topic);
+    printf("Message payload: %s\n", (char *)msg->payload);
+
+   
+    finished_talking = true;
+    //mosquitto_disconnect(mosq);
+}
+
 void init_mosquitto()
 {
-    // Initialize mosquitto library
     mosquitto_lib_init();
 
-    // Create a mosquitto client instance
     mosq = mosquitto_new(NULL, true, NULL);
     if (!mosq)
     {
@@ -28,7 +36,6 @@ void init_mosquitto()
         return;
     }
 
-    // Connect to the MQTT broker
     int rc = mosquitto_connect(mosq, host, 1883, 60);
     if (rc != MOSQ_ERR_SUCCESS)
     {
@@ -36,8 +43,9 @@ void init_mosquitto()
         return;
     }
 
-    // Set callback function for when the message is published
     mosquitto_publish_callback_set(mosq, on_publish);
+    mosquitto_subscribe(mosq, NULL, topic_finish_speaking, 0);
+    mosquitto_message_callback_set(mosq, on_message);
 }
 
 // Function to cleanup Mosquitto
@@ -62,6 +70,15 @@ void publish_message(const std::string& message)
         return;
     }
 }
+
+void wait_finish_speaking()
+{
+   finished_talking = false;
+
+   while (!finished_talking)
+   mosquitto_loop(mosq, 0, 1);
+}
+
 
 int test_main(int argc, char *argv[])
 {

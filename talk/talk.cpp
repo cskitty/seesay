@@ -318,9 +318,11 @@ int main(int argc, char ** argv) {
 
 
                 text_to_speak = ::replace(text_to_speak, params.person + ": ", "");
-                //speak(text_to_speak);
                 publish_message(text_to_speak);
                 audio.clear();
+
+                wait_finish_speaking();
+		printf("finished tts\n");
 
                 ++n_iter;
             }
