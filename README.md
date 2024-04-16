@@ -12,7 +12,8 @@ Check out the demo of SeaSay in action [here](https://www.youtube.com/watch?v=ny
 
 2. **Natural Text-to-Speech (TTS)**: With SeaSay, users can enjoy natural and human-like speech synthesis, converting text inputs into spoken words.
 
-3. **Large Language Model (LLM)**: SeaSay leverages a large language model for token generation, enabling it to understand and generate contextually relevant responses.
+3. **Large Language Model (LLM)**: SeaSay leverages a large language model for token generation, enabling it to understand and generate contextually relevant responses. Currently, LLM is running on my laptop using LM Studio with Dolphin mistral 7B.:wq
+ 
 
 4. **More features TBD**: SeaSay is continuously evolving, with more features and functionalities planned for future releases.
 
@@ -23,7 +24,7 @@ Check out the demo of SeaSay in action [here](https://www.youtube.com/watch?v=ny
 - C++ Compiler (for Whisper.cpp)
 - Python 3
 - Piper (for TTS)
-- Mistral (LLM)
+- Mistral (LLM), runs as a service on my laptop
 
 ## Installation
 
