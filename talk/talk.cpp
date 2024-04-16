@@ -8,6 +8,7 @@
 
 #include <cassert>
 #include <cstdio>
+#include <unistd.h>
 #include <fstream>
 #include <regex>
 #include <string>
@@ -320,9 +321,9 @@ int main(int argc, char ** argv) {
                 text_to_speak = ::replace(text_to_speak, params.person + ": ", "");
                 publish_message(text_to_speak);
                 audio.clear();
-
+    audio.pause();
                 wait_finish_speaking();
-		printf("finished tts\n");
+    audio.resume();
 
                 ++n_iter;
             }

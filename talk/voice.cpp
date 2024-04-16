@@ -1,5 +1,6 @@
 #include <iostream>
 #include <mosquitto.h>
+#include <unistd.h>
 
 // MQTT Broker Info
 const char *host = "localhost";
@@ -19,8 +20,7 @@ void on_message(struct mosquitto *mosq, void *obj, const struct mosquitto_messag
 {
     printf("Message received on topic: %s\n", msg->topic);
     printf("Message payload: %s\n", (char *)msg->payload);
-
-   
+    
     finished_talking = true;
     //mosquitto_disconnect(mosq);
 }
@@ -75,8 +75,11 @@ void wait_finish_speaking()
 {
    finished_talking = false;
 
-   while (!finished_talking)
-   mosquitto_loop(mosq, 0, 1);
+  while (!finished_talking) 
+{
+    mosquitto_loop(mosq, 0, 1);
+    usleep(500000); 
+}
 }
 
 
