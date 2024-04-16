@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -std=c++11 -Wall
 
 # Source files
-SRCS := common.cpp common-ggml.cpp common-sdl.cpp gpt-2.cpp grammar-parser.cpp talk.cpp voice.cpp
+SRCS := common.cpp common-ggml.cpp common-sdl.cpp gpt-2.cpp grammar-parser.cpp talk.cpp voice.cpp chat.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

@@ -15,9 +15,6 @@
 #include <vector>
 #include <regex>
 
-std::string getCompletion(const std::string& question) {
-  return question;
-}
 
 // command-line parameters
 struct whisper_params {
@@ -234,7 +231,7 @@ int main(int argc, char ** argv) {
 
     //gpt2_set_prompt(ctx_gpt, "");
 
-    const int voice_id = rand()%6;
+    //const int voice_id = rand()%6;
 
 
     // main loop
