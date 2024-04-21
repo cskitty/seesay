@@ -9,7 +9,7 @@ finish_speaking_topic = "finish_speaking"
 # Function to convert text to speech
 def speak(input_text):
     sanitized_text = input_text.replace('"', '').replace("'", "")
-    command = f"echo '{sanitized_text}' | /home/pi/work/piper/install/piper --model /home/pi/work/piper/models/amy-medium.onnx --output-raw | aplay -r 22050 -f S16_LE -t raw -"
+    command = f"echo '{sanitized_text}' | /home/pi/work/piper/install/piper --model /home/pi/work/piper/models/amy-medium.onnx --output-raw -q | aplay -r 22050 -f S16_LE -t raw -"
 
     # Execute the command
     subprocess.run(command, shell=True)

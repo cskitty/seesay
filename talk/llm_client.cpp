@@ -48,7 +48,8 @@ string getCompletion(const string& prompt) {
     //string apiKey = ""; // add your API key, the app will not work without it
     string apiKey = "lm-studio"; // add your API key, the app will not work without it
     //string baseUrl = "https://api.openai.com/v1/chat/completions";
-    string baseUrl = "http://192.168.2.249:1234/v1/chat/completions";
+    //string baseUrl = "http://192.168.2.249:1234/v1/chat/completions";
+    string baseUrl = "http://localhost:8080/v1/chat/completions";
     string response;
     CURL* curl = curl_easy_init();
 
@@ -100,16 +101,18 @@ string getCompletion(const string& prompt) {
 
         try {
             // Parse the JSON response
+            //cout << jsonStr << endl;
             json jresponse = json::parse(jsonStr);
 
 
             // Check if the "delta" object is empty
-            if (jresponse["choices"][0]["delta"].empty()) {
+            if (jresponse["choices"][0]["delta"].empty() || ! jresponse["choices"][0]["delta"].contains("content")) {
                 continue; // Skip this response
             }
 
             // Extract data from the response
             std::string content = jresponse["choices"][0]["delta"]["content"];
+            cout << content;
             answer += content;
         } catch (const std::exception& e) {
             std::cerr << "Error parsing JSON: " << e.what() << std::endl;
