@@ -1,21 +1,21 @@
-# SeaSay - Smart Visual Bot
+# SeeSay - Smart Visual Bot
 
-SeaSay is a smart visual bot designed to provide various functions including continuous voice recognition, natural text-to-speech (TTS) conversion, and token generation using a large language model (LLM). It is specifically designed to run on Raspberry Pi using the Mosquitto MQTT protocol.
+SeeSay is a smart visual bot designed to provide various functions including continuous voice recognition, natural text-to-speech (TTS) conversion, and token generation using a large language model (LLM). It is specifically designed to run on Raspberry Pi using the Mosquitto MQTT protocol.
 
 ## Demo
 
-Check out the demo of SeaSay in action [here](https://www.youtube.com/watch?v=nybifJqqwr0).
+Check out the demo of SeeSay in action [here](https://www.youtube.com/watch?v=nybifJqqwr0).
 
 ## Features
 
-1. **Continuous Voice Recognition**: SeaSay is capable of continuously recognizing voice inputs, allowing for seamless interaction with users.
+1. **Continuous Voice Recognition**: SeeSay is capable of continuously recognizing voice inputs, allowing for seamless interaction with users.
 
-2. **Natural Text-to-Speech (TTS)**: With SeaSay, users can enjoy natural and human-like speech synthesis, converting text inputs into spoken words.
+2. **Natural Text-to-Speech (TTS)**: With SeeSay, users can enjoy natural and human-like speech synthesis, converting text inputs into spoken words.
 
-3. **Large Language Model (LLM)**: SeaSay leverages a large language model for token generation, enabling it to understand and generate contextually relevant responses. Currently, LLM is running on my laptop using LM Studio with Dolphin mistral 7B.:wq
+3. **Large Language Model (LLM)**: SeeSay leverages a large language model for token generation, enabling it to understand and generate contextually relevant responses. Currently, LLM is running on my laptop using LM Studio with Dolphin mistral 7B.:wq
  
 
-4. **More features TBD**: SeaSay is continuously evolving, with more features and functionalities planned for future releases.
+4. **More features TBD**: SeeSay is continuously evolving, with more features and functionalities planned for future releases.
 
 ## Requirements
 
@@ -35,16 +35,16 @@ Check out the demo of SeaSay in action [here](https://www.youtube.com/watch?v=ny
 
 ## Usage
 
-1. Start SeaSay by running the provided scripts.
-2. SeaSay will continuously listen for voice inputs and respond accordingly.
+1. Start SeeSay by running the provided scripts.
+2. SeeSay will continuously listen for voice inputs and respond accordingly.
 
 ## Contributing
 
-Contributions to SeaSay are welcome! If you have any ideas, feature requests, or bug reports, feel free to open an issue or submit a pull request.
+Contributions to SeeSay are welcome! If you have any ideas, feature requests, or bug reports, feel free to open an issue or submit a pull request.
 
 ## License
 
-SeaSay is licensed under the [MIT License](LICENSE).
+SeeSay is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
