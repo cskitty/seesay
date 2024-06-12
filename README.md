@@ -1,6 +1,6 @@
 # SeeSay - Smart Glasses 
 
-SeeSay is a smart visual bot designed to provide various functions including continuous voice recognition, natural text-to-speech (TTS) conversion, and token generation using a large language model (LLM). It is specifically designed to run on Raspberry Pi using the Mosquitto MQTT protocol.
+SeeSay is a smart visual bot designed to provide various functions including continuous voice recognition, natural text-to-speech (TTS) conversion, and token generation using a large language model (LLM). It is specifically designed to run on ESP32 S3 Sense board and using Raspberry Pi as computation unit,  communnicating with BLE amd using the Mosquitto MQTT protocol.
 
 ## Demo
 
@@ -8,7 +8,7 @@ Check out the demo of SeeSay in action [here](https://www.youtube.com/watch?v=ny
 
 ## Features
 
-1. **Continuous Voice Recognition**: SeeSay is capable of continuously recognizing voice inputs, allowing for seamless interaction with users.
+1. **Continuous Voice Recognition**: SeeSay is capable of take photos and continuously recognizing voice inputs, allowing for seamless interaction with users.
 
 2. **Natural Text-to-Speech (TTS)**: With SeeSay, users can enjoy natural and human-like speech synthesis, converting text inputs into spoken words.
 
