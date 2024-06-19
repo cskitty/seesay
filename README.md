@@ -21,10 +21,10 @@ Check out the demo of SeeSay in action [here](https://www.youtube.com/watch?v=ny
 
 - Raspberry Pi 5
 - Mosquitto MQTT
-- C++ Compiler (for Whisper.cpp)
 - Python 3
 - Piper (for TTS)
-- Mistral (LLM), runs as a service on my laptop
+- Tiny LLaMa 
+- Whisper.cpp
 
 ## Installation
 
